@@ -1,5 +1,5 @@
 # golang-dribbble
-Get dribbble api and save to sqlite http://nulidev.xyz:8000/
+Get dribbble api and save to sqlite
 
 ## Installation
 
