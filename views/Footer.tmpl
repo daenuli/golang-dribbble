@@ -1,0 +1,36 @@
+{{ define "Footer" }}
+	<!-- jQuery 3 -->
+	<script src="https://adminlte.io/themes/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- AdminLTE App -->
+	<script src="http://blog.nulidev.xyz/AdminLTE-2.4.3/dist/js/adminlte.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="http://blog.nulidev.xyz/AdminLTE-2.4.3/dist/js/demo.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.3/url.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// $(document).on('click')
+			$('.menu').each(function(index, element) {
+				// console.log($(this).data('url'));
+				$(this).attr('href', $(this).data('url')+'?access_token='+url('?access_token'));
+			});
+
+			$('.delete').each(function(index, element) {
+				$(this).attr('href', '/delete?id='+$(this).data('id')+'&access_token='+url('?access_token'));
+			});
+
+			$('.atoken').each(function(index, element) {
+				$(this).val(url('?access_token'));
+			});
+
+			$('.search-name').each(function(index, element) {
+				$(this).val(url('?name'));
+			});
+
+		});
+	</script>
+	</body>
+
+</html>
+{{ end }}

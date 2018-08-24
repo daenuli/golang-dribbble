@@ -1,0 +1,71 @@
+{{ define "User" }}
+{{ template "Header" }}
+<div class="wrapper">
+  {{ template "Mainheader" }}
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      {{ template "Sidebar" }}
+    </section>
+  </aside>
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Users
+        <small>it all starts here</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Users</a></li>
+        <li class="active">Blank page</li>
+      </ol>
+    </section>
+
+    <section class="content">
+
+      <div class="box">
+        <div class="box-header with-border">
+        	<a href="/save" data-url="save" class="btn btn-primary menu pull-left"><i class="fa fa-fw fa-download"></i> Get User Profile from API</a>
+        	<form action="/search">
+        		<input type="hidden" name="access_token" class="atoken" value="">
+	        	<div class="col-xs-6">
+		        	<input type="text" class="form-control pull-right" name="name" id="search" placeholder="Search Name">
+		        </div>
+        	</form>
+        </div>
+        <div class="box-body">
+        	<table class="table table-bordered table-hover">
+        		<thead>
+		            <tr>
+		              <th>ID</th>
+		              <th>Name</th>
+		              <th>Username</th>
+		              <th>Avatar</th>
+		              <th>Dribbble URL</th>
+		              <th>Location</th>
+		              <th>Action</th>
+		            </tr>
+	            </thead>
+	            <tbody>
+				{{ range . }}
+			      <tr>
+			        <td> {{ .Id }} </td>
+			        <td> {{ .Name }} </td>
+			        <td> {{ .Username }} </td>
+			        <td> <img src="{{ .Avatar }}"> </td>
+			        <td> <a href="{{ .Url }}">{{ .Url }}</a> </td>
+			        <td> {{ .Location }} </td>
+			        <td><a href='/delete?id={{ .Id }}' data-id="{{ .Id }}" class='btn btn-danger btn-xs delete'>Delete</a></td>
+			      </tr>
+			    {{ end }}
+	            </tbody>
+			</table>
+        </div>
+        <div class="box-footer">
+          Footer
+        </div>
+      </div>
+    </section>
+  </div>
+  {{ template "Adminltefooter" }}
+</div>
+{{ template "Footer" }}
+{{ end }}

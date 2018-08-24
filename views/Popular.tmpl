@@ -1,0 +1,50 @@
+{{ define "Popular" }}
+{{ template "Header" }}
+<div class="wrapper">
+  {{ template "Mainheader" }}
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      {{ template "Sidebar" }}
+    </section>
+  </aside>
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        List popular shots
+        <small>it all starts here</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> List popular shots</a></li>
+        <li class="active">Blank page</li>
+      </ol>
+    </section>
+
+    <section class="content">
+
+      <div class="box">
+        <div class="box-header with-border">
+        	<a href="/getpopular" data-url="getpopular" class="btn btn-primary menu"><i class="fa fa-fw fa-download"></i> Get Popular Shots from API</a>
+        </div>
+        <div class="box-body">
+        	<table class="table table-bordered table-hover">
+        		<thead>
+	            <tr>
+	              <th>ID</th>
+	              <th>Title</th>
+	              <th>Description</th>
+	              <th>Images</th>
+	              <th>Action</th>
+	            </tr>
+            </thead>
+    			</table>
+        </div>
+        <div class="box-footer">
+          Footer
+        </div>
+      </div>
+    </section>
+  </div>
+  {{ template "Adminltefooter" }}
+</div>
+{{ template "Footer" }}
+{{ end }}
